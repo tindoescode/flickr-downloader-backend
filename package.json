@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildcss": "postcss node_modules/tailwindcss/tailwind.css -o public/assets/style.css",
+    "start": "npm run buildcss && nodemon main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "axios-cookiejar-support": "^1.0.1",
+    "express": "^4.17.1",
+    "pug": "^3.0.2",
+    "tough-cookie": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "tailwindcss": "^2.0.3"
+  }
+}
