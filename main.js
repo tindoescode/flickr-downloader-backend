@@ -10,9 +10,6 @@ app.set("view engine", "pug")
 app.set("views", path.join(__dirname, "views"))
 
 const getAccessToken = async function(email, password) {
-    email = "hopthucuatin@gmail.com"
-    password = "Wlhibhlf1ambti"
-
     var response = await axios.post('https://cognito-idp.us-east-1.amazonaws.com/',
         `{"AuthFlow":"USER_PASSWORD_AUTH","ClientId":"3ck15a1ov4f0d3o97vs3tbjb52","AuthParameters":{"USERNAME":"${email}","PASSWORD":"${password}","DEVICE_KEY":"us-east-1_a6ea1c0b-e643-41a2-9d79-791f3677f65c"},"ClientMetadata":{}}`, {
         headers: {
