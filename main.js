@@ -98,15 +98,20 @@ app.get('/get-link/', (req, res) => {
     //TODO: check if url is valid
     //https://flickr.com/photos/51838687@N07/albums/72157715285724358
 
-    let { link } = req.query;
+    let { link, username, password } = req.query;
     if(false == /https:\/\/flickr.com\/photos\/[\w@]+\/albums\/\d+\/?/.test(link)) {
-        res.json({"error": "Link không hợp lệ"})
+        res.json({success: false, "error": "Link không hợp lệ"})
+        return
+    }
+    
+    if(!username || !password) return {
+        res.json({success: false, "error": "missing_parametters"});
         return
     }
     
     let accessToken
     
-    getAccessToken().then((value) => {
+    getAccessToken(username, password).then((value) => {
         accessToken = value
 
         getCookie(accessToken).then((cookie) => {
