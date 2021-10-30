@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "buildcss": "postcss node_modules/tailwindcss/tailwind.css -o public/assets/style.css",
-    "start": "npm run buildcss && nodemon main.js"
+    "start": "npm run buildcss && node main.js",
+    "dev": "npm run buildcss && nodemon main.js"
   },
   "author": "",
   "license": "ISC",
